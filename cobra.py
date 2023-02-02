@@ -62,31 +62,31 @@ tela.onkeypress(vai_para_baixo, "Down")
 ## O jogo começa aqui
 
 while tempo > 0:
-  tela.update()
-  if cobra.distance(comida) < 20:
-    x = random.randint(-290,290)
-    y = random.randint(-290,290) 
-    comida.goto(x,y)
-    cobra_tamanho = cobra_tamanho + 1
-    pontos = pontos + 10
-    tela.title(f"Pontos: {Pontos}")
+    tela.update()
+    if cobra.distance(comida) < 20:
+        x = random.randint(-290,290)
+        y = random.randint(-290,290) 
+        comida.goto(x,y)
+        cobra_tamanho = cobra_tamanho + 1
+        pontos = pontos + 10
+        tela.title(f"Pontos: {Pontos}")
 
-time.sleep(0.1)
-tempo = tempo - 0.1
-tela.title(f'Tempo{tempo} - Pontos:{pontos}')
+    time.sleep(0.1)
+    tempo = tempo - 0.1
+    tela.title(f'Tempo{tempo} - Pontos:{pontos}')
 
-if cobra.direction == 'direita':
-  x = cobra.xcor()
-  cobra.setx(x +20)
-if cobra.direction == 'esquerda':
-  x = cobra.xcor()
-  cobra.setx(x -20)
-if cobra.direction == 'cima':
-  y = cobra.ycor()
-  cobra.sety(y +20)
-if cobra.direction == 'baixo':
-  y = cobra.ycor()
-  cobra.sety(y -20)
+    if cobra.direction == 'direita':
+      x = cobra.xcor()
+      cobra.setx(x +20)
+    if cobra.direction == 'esquerda':
+      x = cobra.xcor()
+      cobra.setx(x -20)
+    if cobra.direction == 'cima':
+      y = cobra.ycor()
+      cobra.sety(y +20)
+    if cobra.direction == 'baixo':
+      y = cobra.ycor()
+      cobra.sety(y -20)
 ## O jogo termina aqui
 
 tela.title("Jogo finalizado! Pontuação Final:{}".format(pontos))
